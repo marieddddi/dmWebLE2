@@ -1,0 +1,49 @@
+#t {
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+}
+
+#t>h1 {
+    color: white;
+    border-bottom: 1px solid white;
+    text-align: center;
+    font-size: 40px;
+    margin-right: 200px;
+    margin-left: 200px;
+    text-transform: uppercase;
+
+}
+
+.ligne {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    width: 33.33%;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.image img {
+    width: 500px;
+    /* Largeur souhaitée pour les images */
+    height: 300px;
+    /* Hauteur souhaitée pour les images */
+    object-fit: cover;
+}
+
+.titre {
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.titre a {
+    color: black;
+
+
+}
