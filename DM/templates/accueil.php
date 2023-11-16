@@ -35,7 +35,19 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php") {
 <!-- **** B O D Y **** -->
 
 <body>
-	
+	<div id="ensemble">
+		<div class="palette">
+			<?php
+			// Tableau de couleurs
+			$couleurs = array('#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF');
+
+			// Affichage des couleurs
+			foreach ($couleurs as $couleur) {
+				echo '<div class="couleur" style="background-color:' . $couleur . '"></div>';
+			}
+			?>
+		</div>
+	</div>
 </body>
 <!-- **** F I N **** B O D Y **** -->
 

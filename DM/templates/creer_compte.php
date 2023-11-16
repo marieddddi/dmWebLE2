@@ -29,38 +29,45 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php") {
 
 
 <!-- **** B O D Y **** -->
-<body>
-<div id="corps">
-	<div id="image">
-		<img src="ressources/compte.jpg" />
-	</div>
-	<p id="mess"> <strong>Inscription</strong></p>
-	<p id="indication">Inscrivez-vous pour personnaliser votre palette de couleurs et vos smileys.</p>
 
-		
-	<div id="formLogin">
-		<form action="controleur.php" method="GET">
-			<div id="coord">
-		<div class="log"><label for="nom">Nom <span class="rouge">*</span></label><br>
-			<input type="text" id="nomp" name="nom" placeholder="Nom"/></div><br />
-			<div class="log"><label for="prenom">Prénom <span class="rouge">*</span></label><br>
-			<input type="text" id="nomp" name="prenom" placeholder="Prénom"/></div><br />
-</div>
-			<div class="log"><label for="login"> Adresse mail ou pseudo <span class="rouge">*</span></label> <br> 
-			<input type="text" id="login" name="login" placeholder="Adresse mail ou pseudo"/></div><br />
-			<div class="log"><label for="passe">Mot de passe <span class="rouge">*</span></label><br>
-			<input type="password" id="login" name="passe" placeholder="Mot de passe"/></div><br />
-			<div class="log"><label for="passe2">Confirmer le mot de passe <span class="rouge">*</span></label><br>
-			<input type="password" id="login" name="passe2" placeholder="Mot de passe"/></div><br />
-			<div class="log"><span class="rouge">obligatoire*</span></div>
-			<div id="bouton">
-			<div id="coco">
-				<input type="submit" name="action" value="S'inscrire" id="compte" />
-			</div>
-			<div id="dejacompte">
-			Vous avez déjà un compte ? <br/><a href="index.php?view=login"> Connectez-vous</a> 
-			</div> </div>
-		</form>
-	</div>
-	</body>
+<body>
+	<div id="corps">
+		<div id="image">
+			<img src="ressources/compte.jpg" />
+		</div>
+		<p id="mess"> <strong>Inscription</strong></p>
+		<p id="indication">Inscrivez-vous pour personnaliser votre palette de couleurs et vos smileys.</p>
+
+
+		<div id="formLogin">
+			<form action="controleur.php" method="GET">
+				<div id="coord">
+					<div class="log"><label for="nom">Nom <span class="rouge">*</span></label><br>
+						<input type="text" id="nomp" name="nom" placeholder="Nom" />
+					</div><br />
+					<div class="log"><label for="prenom">Prénom <span class="rouge">*</span></label><br>
+						<input type="text" id="nomp" name="prenom" placeholder="Prénom" />
+					</div><br />
+				</div>
+				<div class="log"><label for="login"> Adresse mail ou pseudo <span class="rouge">*</span></label> <br>
+					<input type="text" id="login" name="login" placeholder="Adresse mail ou pseudo" />
+				</div><br />
+				<div class="log"><label for="passe">Mot de passe <span class="rouge">*</span></label><br>
+					<input type="password" id="login" name="passe" placeholder="Mot de passe" />
+				</div><br />
+				<div class="log"><label for="passe2">Confirmer le mot de passe <span class="rouge">*</span></label><br>
+					<input type="password" id="login" name="passe2" placeholder="Mot de passe" />
+				</div><br />
+				<div class="log"><span class="rouge">obligatoire*</span></div>
+				<div id="bouton">
+					<div id="coco">
+						<input type="submit" name="action" value="S'inscrire" id="compte" />
+					</div>
+					<div id="dejacompte">
+						Vous avez déjà un compte ? <br /><a href="index.php?view=login"> Connectez-vous</a>
+					</div>
+				</div>
+			</form>
+		</div>
+</body>
 <!-- **** F I N **** B O D Y **** -->

@@ -50,7 +50,7 @@
 
 			<h2>2. Propriété intellectuelle :</h2>
 			<p>Tous les droits de propriété intellectuelle relatifs au site et à son contenu, y compris les textes, les
-				images, les vidéos, les logos, les marques de commerce, etc., sont la propriété de "Smiley" 
+				images, les vidéos, les logos, les marques de commerce, etc., sont la propriété de "Smiley"
 				ou de ses partenaires. Toute utilisation non autorisée du contenu est strictement interdite.</p>
 
 			<h1>Contact</h1>

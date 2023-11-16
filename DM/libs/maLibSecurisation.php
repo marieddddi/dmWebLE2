@@ -18,12 +18,13 @@ include_once "modele.php";	// Car on utilise la fonction connecterUtilisateur()
  * @param string $password
  * @return false ou true ; un effet de bord est la création de variables de session
  */
-function verifUser($login,$password)
+function verifUser($login, $password)
 {
-	
-	$id = verifUserBdd($login,$password);
-	$mail = verifMailBdd($login,$password);
-	if (!$id) return false; 
+
+	$id = verifUserBdd($login, $password);
+	$mail = verifMailBdd($login, $password);
+	if (!$id)
+		return false;
 
 	// Cas succès : on enregistre pseudo, idUser dans les variables de session 
 	// il faut appeler session_start ! 
@@ -34,7 +35,7 @@ function verifUser($login,$password)
 	$_SESSION["connecte"] = true;
 	$_SESSION["heureConnexion"] = date("H:i:s");
 
-	return true;	
+	return true;
 }
 
 
@@ -46,13 +47,12 @@ function verifUser($login,$password)
  * Elle ne fait rien si l'utilisateur est connecté, et si $urlGood est faux
  * Elle redirige vers urlGood sinon
  */
-function securiser($urlBad,$urlGood=false)
+function securiser($urlBad, $urlGood = false)
 {
-	if (! valider("connecte","SESSION")) {
+	if (!valider("connecte", "SESSION")) {
 		rediriger($urlBad);
 		die("");
-	}
-	else {
+	} else {
 		if ($urlGood)
 			rediriger($urlGood);
 	}

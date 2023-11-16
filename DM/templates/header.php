@@ -20,7 +20,6 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 	<title>Les recettes du chef</title>
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="js/header.js"></script>
 </head>
 
 <!-- **** F I N **** H E A D **** -->
