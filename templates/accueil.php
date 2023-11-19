@@ -1,54 +1,49 @@
 <?php
-
 include_once("libs/modele.php");
 include_once("libs/maLibForms.php");
-//C'est la propriété php_self qui nous l'indique : 
-// Quand on vient de index : 
-// [PHP_SELF] => /chatISIG/index.php 
-// Quand on vient directement par le répertoire templates
-// [PHP_SELF] => /chatISIG/templates/accueil.php
 
-// Si la page est appelée directement par son adresse, on redirige en passant pas la page index
-// Pas de soucis de bufferisation, puisque c'est dans le cas où on appelle directement la page sans son contexte
 if (basename($_SERVER["PHP_SELF"]) != "index.php") {
 	header("Location:../index.php?view=accueil");
 	die("");
 }
-
 ?>
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
-
-<!-- **** H E A D **** -->
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Smiley</title>
 	<link rel="stylesheet" type="text/css" href="css/accueil.css" />
 </head>
-<!-- **** F I N **** H E A D **** -->
-
-
-<!-- **** B O D Y **** -->
 
 <body>
-	<div id="ensemble">
-		<div class="palette">
-			<?php
-			// Tableau de couleurs
-			$couleurs = array('#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF');
+	<form>
+		<label for="table-size">Taille du tableau :</label>
+		<input type="number" id="table-size" name="table-size" min="1" max="50" value="10">
+		<button type="button" id="create-table">Créer le tableau</button>
+	</form>
 
-			// Affichage des couleurs
-			foreach ($couleurs as $couleur) {
-				echo '<div class="couleur" style="background-color:' . $couleur . '"></div>';
-			}
-			?>
-		</div>
+	<div class="container">
+		<table id="pixel-table"></table>
 	</div>
+
+	<div class="container">
+		<div id="color-palette"></div>
+		<input type="file" id="upload-image">
+	</div>
+
+	<button type="button" id="export-small">Exporter en PNG (Petite)</button>
+	<button type="button" id="export-medium">Exporter en PNG (Moyenne)</button>
+	<button type="button" id="export-large">Exporter en PNG (Grande)</button>
+
+	<div class="container">
+		<h2>Smileys produits :</h2>
+		<div id="produced-smileys"></div>
+	</div>
+
+	<script src="js/footer.js"></script>
+	<script src="js/accueil.js"></script>
 </body>
-<!-- **** F I N **** B O D Y **** -->
 
 </html>
