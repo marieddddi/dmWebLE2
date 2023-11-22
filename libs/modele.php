@@ -78,12 +78,11 @@ function modifierPasse($sessionIdPers, $passe)
 	SQLUpdate($sql);
 }
 
-function liste_couleurs($idUser)
+function palette_mon_compte($idUser)
 {
-	$sql = "SELECT couleur.code FROM couleur JOIN palette ON palette.couleur=couleur.code 
-			JOIN utilisateur ON utilisateur.id=palette.id 
-			WHERE utilisateur.id = '$idUser'";
-	return parcoursRs(SQLSelect($sql));
+	$sql = "SELECT palette.couleur FROM palette
+			WHERE palette.id = '$idUser'";
+	return SQLGetChamp($sql);
 }
 
 

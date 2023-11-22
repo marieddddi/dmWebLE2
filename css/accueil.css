@@ -1,65 +1,24 @@
-/* Styles pour le formulaire */
-form {
-  margin-bottom: 20px;
+#ensemble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-label {
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px; /* Largeur suffisante pour afficher 3 couleurs par ligne */
+}
+
+.couleur {
+  width: calc(
+    (100% - 20px) / 3
+  ); /* Calcule la largeur pour 3 couleurs par ligne avec marges */
+  height: 100px;
+  margin: 5px;
   display: inline-block;
-  margin-right: 10px;
-}
-input[type="number"] {
-  width: 50px;
-}
-
-/* Styles pour le tableau de pixels */
-#pixel-table {
-  width: 30%;
-  height: auto;
-  border-color: black !important; /* Force la couleur des bordures */
-  display: inline-block;
-  margin-right: 20px;
-  border-collapse: collapse;
-  border-width: 1px; /* Ajout de la largeur des bordures */
-}
-
-#pixel-table td {
-  width: 20px;
-  height: 20px;
-  border: 1px solid black !important; /* Force la couleur des bordures des cellules */
-  cursor: pointer;
-}
-
-/* Styles pour la palette de couleurs */
-#color-palette {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 20px;
-}
-#color-palette div {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-#color-palette div.selected {
-  border: 2px solid red; /* Ajout d'une bordure pour indiquer la sélection */
-}
-
-/* Styles pour les boutons */
-button {
-  margin-right: 10px;
-}
-
-/* Styles pour les conteneurs */
-.container {
-  margin-bottom: 100px;
-  margin-right: 30px;
-}
-.container:after {
-  content: "";
-  display: table;
-  clear: both;
-
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(20% 30%, 20% 30%, 1000% 40%, 10% 80%);
 }

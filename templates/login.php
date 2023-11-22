@@ -57,6 +57,12 @@ $passe = valider("passe", "COOKIE");
 							Inscrivez-vous</a>
 					</div>
 				</div>
+				<!--si on a un message dans l'url, on l'affiche sur la page: -->
+				<?php if (isset($_GET['msg'])) {
+					// Récupérer la valeur du paramètre 'msg'
+					$message = urldecode($_GET['msg']); // Décoder les caractères spéciaux dans le message
+					echo '<div id="message">' . $message . '</div>';
+				} ?>
 			</form>
 		</div>
 </body>

@@ -38,49 +38,24 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php") {
 	<h1 id="palete">Ma palette de couleurs</h1>
 	<div id="liste">
 		<?php
+		function conversion_chaine($couleurs)
+		{
+			// Explode la chaîne de couleurs en un tableau en utilisant la virgule comme séparateur
+			$couleursArray = explode(',', $couleurs);
+
+			// Nettoie le tableau des éventuels espaces vides ou valeurs vides
+			$couleursArray = array_filter(array_map('trim', $couleursArray));
+
+			// Retourne le tableau des couleurs
+			return $couleursArray;
+		}
+		// Affichage du tableau de couleurs récupéré
 		valider('connecte', 'SESSION');
-		$planning = liste_couleurs($_SESSION["idUser"]);
-		foreach ($planning as $p) {
-			$clique = "<div id='planning'>Semaine " . $p['num_semaine'] . "</div>";
-			$idPlanning = idPlanning($_SESSION["idUser"], $p['num_semaine']);
-			mkLien($url = "index.php", $clique, $qs = "view=planning&id_planning=" . $idPlanning, $attrs = "");
+		$couleurs = palette_mon_compte($_SESSION['idUser']);
+		$palette = conversion_chaine($couleurs);
+		foreach ($palette as $p) {
+			echo "<div class='color' style='background-color:" . $p . ";'></div>";
 		}
-		?>
-	</div>
-
-	<h1 id="recettes_fav">MES RECETTES FAVORITES</h1>
-	<div id="listefav">
-		<?php
-		$recettes = liste_recette_fav($_SESSION['idUser']);
-		if ($recettes == NULL) {
-			echo "<div id='planning'>Il n'y a pas de recette favorite</div>";
-		} else {
-			foreach ($recettes as $r) {
-				$clique = $r['id_page_recette'];
-				echo "<div id='recette'><a href='index.php?view=page_recette&id_page_recette=" . $clique . "'><img src='" . $r['lien_presentation'] . "'/></a></div>";
-			}
-		}
-		?>
-	</div>
-
-	<h1 id="lesavis">MES AVIS</h1>
-	<div id="liste">
-		<?php
-		$avis = liste_avis_personne($_SESSION['idUser']);
-		foreach ($avis as $a) {
-			echo "<div id='avis'><h3>" . $a['nom'] . "</h3><h5>" . $a['titre'] . "</h5><p>" . $a['texte_avis'] . "</p>";
-			echo "<a href='index.php?view=avis-modif&id_page_recette=" . $a['id_page_recette'] . "'> Modifier </a>";
-			echo "</div>";
-		}
-		?>
-	</div>
-
-	<h1 id="mescoordonnees">MES COORDONNÉES</h1>
-	<div id="liste">
-		<?php
-		echo "<div id='coordonnees'>PSEUDO : " . $_SESSION['pseudo'] . "<div><a href='index.php?view=modif-pseudo&idUser'>Modifier</a></div></div>";
-		echo "<div id='coordonnees'>ADRESSE MAIL : " . $_SESSION['mail'] . "<div><a href='index.php?view=modif-mail&idUser'>Modifier</a></div></div>";
-		echo "<div id='coordonnees'>MOT DE PASSE : XXXXXXXXXXXXXXXXXX <div><a href='index.php?view=modif-mdp'>Modifier</a></div></div>";
 
 		?>
 	</div>

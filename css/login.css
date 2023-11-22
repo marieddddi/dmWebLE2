@@ -72,3 +72,10 @@
 #formLogin {
   margin-top: 100px;
 }
+
+#message {
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 15px;
+  color: crimson;
+}

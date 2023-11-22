@@ -21,8 +21,7 @@ if ($action = valider("action")) {
 		case 'Se connecter':
 			$qs = array("view" => "accueil");
 			// On verifie la presence des champs login et passe
-			if ($login = valider("login")) {
-				if ($passe = valider("passe")) {
+			if (($login = valider("login")) && ($passe = valider("passe"))) {
 					// On verifie l'utilisateur, 
 					// et on crée des variables de session si tout est OK
 					// Cf. maLibSecurisation
@@ -38,8 +37,13 @@ if ($action = valider("action")) {
 							setcookie("remember", false, time() - 3600);
 						}
 					}
+					else{$qs = array("msg" => " Pseudo ou mot de passe incorrect", "view" => "login");
+				break;}
 				}
-			}
+			
+			else{$qs = array("msg" => " Veuillez remplir tous les champs obligatoires", "view" => "login");
+				break;}
+
 			// On affiche deconnexion?>
 
 			<?php
